@@ -1,0 +1,22 @@
+{
+  "name": "selfhub",
+  "version": "1.0.0",
+  "description": "SelfHub — سلف‌بات تلگرام بدون ربات هلپر، اجرا روی Cloudflare Workers (mtcute + Durable Objects)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:remote": "wrangler dev --remote",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mtcute/core": "0.32.3",
+    "@mtcute/web": "0.32.3"
+  },
+  "devDependencies": {
+    "wrangler": "4.147.0",
+    "typescript": "7.0.2",
+    "@cloudflare/workers-types": "5.20261004.1"
+  }
+}
