@@ -1,18 +1,25 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "lib": ["ESNext"],
     "types": ["@cloudflare/workers-types"],
     "strict": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "allowJs": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", ".wrangler"]
 }

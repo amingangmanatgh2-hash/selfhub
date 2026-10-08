@@ -3,24 +3,26 @@
   "name": "selfhub",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-20",
+
   "assets": {
     "directory": "./public",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*", "/webhook/*"]
   },
+
   "durable_objects": {
-    "bindings": [
-      { "name": "HUB", "class_name": "HubDO" },
-      { "name": "SELF", "class_name": "SelfDO" }
-    ]
+    "bindings": [{ "name": "HUB", "class_name": "HubDO" }]
   },
-  "migrations": [
-    { "tag": "v1", "new_sqlite_classes": ["HubDO", "SelfDO"] }
-  ],
-  "rules": [
-    { "type": "CompiledWasm", "globs": ["**/*.wasm"], "fallthrough": true }
-  ],
-  "observability": {
-    "enabled": true
-  }
+
+  // اگر نسخه‌ی ۱ (با SelfDO) را دیپلوی کرده‌اید، قبل از این migration را اعمال کنید:
+  //   { "tag": "v2", "delete_classes": [{ "name": "SelfDO" }] }
+  // راهنما: docs/MIGRATION.md
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["HubDO"] }],
+
+  // زمان‌بند و یادآور با cron بیدار می‌شوند — بدون هیچ اتصال دائمی
+  "triggers": { "crons": ["* * * * *"] },
+
+  "observability": { "enabled": true },
+
+  "limits": { "cpu_ms": 30000 }
 }

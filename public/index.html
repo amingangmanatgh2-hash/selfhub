@@ -3,19 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SelfHub — پنل مدیریت سلف‌بات تلگرام</title>
-<meta name="description" content="سلف‌بات تلگرام بدون ربات هلپر — کنترل کامل از پنل وب" />
+<title>SelfHub — پنل ربات تلگرام</title>
+<meta name="description" content="پنل مدیریت ربات تلگرام روی Bot API رسمی: مدیریت گروه، پاسخ‌گو، زمان‌بند، نوت، آمار و لاگ" />
+<meta name="color-scheme" content="dark light" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<div id="app">
-  <div class="boot">
-    <div class="logo-big">🤖</div>
-    <div class="spin"></div>
-    <p>در حال بارگذاری SelfHub…</p>
+<div id="app" class="boot">
+  <div class="boot-box">
+    <div class="logo">🐾</div>
+    <div class="spinner" aria-hidden="true"></div>
+    <p>SelfHub در حال بارگذاری…</p>
   </div>
 </div>
+<div id="toasts" aria-live="polite"></div>
+<script src="/demo.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>
